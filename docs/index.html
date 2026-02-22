@@ -263,7 +263,7 @@
         }
 
         .hero__actions {
-            margin-top: 20px;
+            margin-top: 18px;
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
@@ -271,37 +271,77 @@
 
         /* Shared button system */
         .btn {
+            position: relative;
             display: inline-flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             justify-content: center;
-            min-height: 46px;
-            padding: 0 20px;
-            border-radius: 12px;
+            min-height: 58px;
+            padding: 10px 18px;
+            border-radius: 18px;
             font-family: inherit;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 14px;
+            line-height: 1.15;
             text-decoration: none;
             cursor: pointer;
-            border: none;
-            transition: transform 120ms ease, opacity 120ms ease, box-shadow 120ms ease;
+            border: 1px solid transparent;
+            transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background-color 140ms ease;
             white-space: nowrap;
+        }
+
+        .btn__label {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .btn__sub {
+            margin-top: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            opacity: 0.82;
         }
 
         .btn:hover {
             transform: translateY(-1px);
-            opacity: 0.96;
+        }
+
+        .btn:active {
+            transform: translateY(0);
         }
 
         .btn--primary {
-            background: var(--btn-primary);
+            background: linear-gradient(180deg, #1b1b1b 0%, #111111 100%);
             color: #ffffff;
-            box-shadow: 0 8px 24px rgba(17, 17, 17, 0.15);
+            border-color: #151515;
+            box-shadow:
+                0 10px 22px rgba(17, 17, 17, 0.16),
+                0 2px 6px rgba(17, 17, 17, 0.10);
+        }
+
+        .btn--primary:hover {
+            box-shadow:
+                0 14px 28px rgba(17, 17, 17, 0.20),
+                0 3px 8px rgba(17, 17, 17, 0.12);
         }
 
         .btn--secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border-hairline);
+            background: rgba(255, 255, 255, 0.72);
+            color: #1b1b1b;
+            border-color: #ddd4c9;
+            box-shadow:
+                0 6px 16px rgba(40, 28, 18, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+        }
+
+        .btn--secondary:hover {
+            background: rgba(255, 255, 255, 0.92);
+            border-color: #cfc4b8;
+            box-shadow:
+                0 10px 20px rgba(40, 28, 18, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
         }
 
         /* Android waitlist inline form */
@@ -1274,8 +1314,8 @@
             }
 
             .hero__status { order: 5; margin-top: 4px; }
-            .hero__actions { order: 6; margin-top: 12px; flex-direction: column; }
-            .hero__actions .btn { width: 100%; }
+            .hero__actions { order: 6; margin-top: 12px; flex-direction: column; align-items: stretch; }
+            .hero__actions .btn { width: 100%; align-items: flex-start; }
             .hero__waitlist-form { order: 7; }
             .hero__waitlist-form form { flex-direction: column; }
             .hero__waitlist-form input[type="email"],
@@ -1450,10 +1490,12 @@
                 </p>
                 <div class="hero__actions">
                     <a class="btn btn--primary" href="https://apps.apple.com/ua/app/scan-match/id6757746270" target="_blank" rel="noopener noreferrer">
-                        Download on the App Store
+                        <span class="btn__label">Download on the App Store</span>
+                        <span class="btn__sub">iPhone · Available now</span>
                     </a>
                     <button class="btn btn--secondary" id="android-waitlist-toggle" type="button">
-                        Join Android Waitlist
+                        <span class="btn__label">Join Android Waitlist</span>
+                        <span class="btn__sub">Get launch updates</span>
                     </button>
                 </div>
                 <div class="hero__waitlist-form" id="hero-waitlist-form" hidden>
