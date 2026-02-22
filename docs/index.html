@@ -540,7 +540,7 @@
             background: var(--bg-primary);
             border: 1px solid var(--border-hairline);
             border-radius: 24px;
-            padding: 32px;
+            overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -549,59 +549,41 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
         }
 
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
+        .feature-card__img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .feature-card__icon {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+            border-bottom: 1px solid var(--border-hairline);
         }
 
-        .feature-icon svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        .feature-icon.scan {
-            background: var(--accent-terracotta-light);
-            color: var(--accent-terracotta);
-        }
-
-        .feature-icon.wardrobe {
-            background: var(--accent-brass-light);
+        .feature-card__icon svg {
+            width: 48px;
+            height: 48px;
             color: var(--accent-brass);
         }
 
-        .feature-icon.ai {
-            background: linear-gradient(135deg, var(--accent-terracotta-light), var(--accent-brass-light));
-            color: var(--hero-gradient-3);
-        }
-
-        .feature-icon.results {
-            background: #EEF6F0;
-            color: #1E6F4C;
-        }
-
-        .feature-icon.style {
-            background: #F2F3F5;
-            color: #4B5563;
-        }
-
-        .feature-icon.secure {
-            background: #F0F7FF;
-            color: #2563EB;
+        .feature-card__body {
+            padding: 24px;
         }
 
         .feature-card h3 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .feature-card p {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-secondary);
             line-height: 1.6;
         }
@@ -1623,71 +1605,51 @@
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon scan">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
-                            <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
-                            <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
-                            <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
-                            <rect x="7" y="7" width="10" height="10" rx="1"></rect>
-                        </svg>
+                    <img class="feature-card__img" src="assets/features/feature_scan.webp" alt="Scan an item in the Scan & Match app">
+                    <div class="feature-card__body">
+                        <h3>Scan in seconds</h3>
+                        <p>Point your phone at an item and get matches instantly.</p>
                     </div>
-                    <h3>Scan in seconds</h3>
-                    <p>Point your phone at an item and get matches instantly.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon wardrobe">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"></path>
-                            <path d="M9 22V12h6v10"></path>
-                            <path d="M2 10.6L12 2l10 8.6"></path>
-                        </svg>
+                    <img class="feature-card__img" src="assets/features/feature_wardrobe.webp" alt="Your digital wardrobe in Scan & Match">
+                    <div class="feature-card__body">
+                        <h3>Use what you already own</h3>
+                        <p>See what works with your real wardrobe before you buy.</p>
                     </div>
-                    <h3>Use what you already own</h3>
-                    <p>See what works with your real wardrobe before you buy.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon ai">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
-                            <path d="M20.88 10A10 10 0 0 0 12 2v10h10"></path>
-                        </svg>
+                    <img class="feature-card__img" src="assets/features/feature_suggestions.webp" alt="Personalized outfit suggestions in Scan & Match">
+                    <div class="feature-card__body">
+                        <h3>Personalized suggestions</h3>
+                        <p>Get AI-guided tips for strong matches and near matches.</p>
                     </div>
-                    <h3>Personalized suggestions</h3>
-                    <p>Get AI-guided tips for strong matches and near matches.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon results">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
+                    <img class="feature-card__img" src="assets/features/feature_results.webp" alt="Match results screen in Scan & Match">
+                    <div class="feature-card__body">
+                        <h3>Clear match results</h3>
+                        <p>See your best matches at a glance and decide faster.</p>
                     </div>
-                    <h3>Clear match results</h3>
-                    <p>See your best matches at a glance and decide faster.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon style">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="13.5" cy="6.5" r="2.5"></circle>
-                            <circle cx="19" cy="17" r="2"></circle>
-                            <circle cx="6" cy="12" r="3"></circle>
-                            <path d="M12 8.5a4.5 4.5 0 0 0 4 7"></path>
-                            <path d="M6.5 15a4.5 4.5 0 0 0 4.5 4"></path>
-                        </svg>
+                    <img class="feature-card__img" src="assets/features/feature_style.webp" alt="Style preferences in Scan & Match">
+                    <div class="feature-card__body">
+                        <h3>Your style, your results</h3>
+                        <p>Set your preferences and get suggestions that actually fit your look.</p>
                     </div>
-                    <h3>Your style, your results</h3>
-                    <p>Set your preferences and get suggestions that actually fit your look.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon secure">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="feature-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                             <path d="M9 12l2 2 4-4"></path>
                         </svg>
                     </div>
-                    <h3>Private by design</h3>
-                    <p>Your data is never sold, and your images aren't used to train AI.</p>
+                    <div class="feature-card__body">
+                        <h3>Private by design</h3>
+                        <p>Your data is never sold, and your images aren't used to train AI.</p>
+                    </div>
                 </div>
             </div>
         </div>
