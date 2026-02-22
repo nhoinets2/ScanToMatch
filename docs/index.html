@@ -51,6 +51,28 @@
     }
     </script>
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Meta Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+        (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -541,6 +563,8 @@
             border: 1px solid var(--border-hairline);
             border-radius: 24px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -552,23 +576,33 @@
         .feature-card__img {
             display: block;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            object-position: top;
+            height: auto;
+            border-radius: 16px 16px 0 0;
         }
 
         .feature-card__icon {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 200px;
-            background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
-            border-bottom: 1px solid var(--border-hairline);
+            flex: 1;
+            min-height: 200px;
+            background: linear-gradient(135deg, var(--accent-brass-light), rgba(198, 162, 107, 0.06));
+            border-bottom: 1px solid rgba(198, 162, 107, 0.2);
+        }
+
+        .feature-card__icon-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(198, 162, 107, 0.18);
         }
 
         .feature-card__icon svg {
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
             color: var(--accent-brass);
         }
 
@@ -651,6 +685,40 @@
             width: 36px;
             height: 36px;
             color: var(--accent-terracotta);
+        }
+
+        .step-screenshot-wrap {
+            width: 100%;
+            max-width: 260px;
+            margin: 0 auto 20px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #f7f4ef;
+            box-shadow: 0 2px 8px rgba(25, 20, 13, 0.08);
+        }
+
+        .step-screenshot {
+            width: 100%;
+            display: block;
+        }
+
+        .hero__caption {
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.4;
+            color: var(--text-tertiary);
+            margin-top: 10px;
+        }
+
+        .section-time-marker {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: rgba(196, 117, 84, 0.12);
+            color: var(--accent-terracotta);
+            font-size: 13px;
+            font-weight: 600;
         }
 
         .step h3 {
@@ -1409,6 +1477,10 @@
                 gap: 40px;
             }
 
+            .step-screenshot-wrap {
+                max-width: 220px;
+            }
+
             .why {
                 padding: 72px 0;
             }
@@ -1526,7 +1598,7 @@
                         <button type="submit">Submit</button>
                     </form>
                     <div class="hero__waitlist-success" id="android-waitlist-success">
-                        Thanks — you're on the list!
+                        You're on the list! We'll email you as soon as Scan &amp; Match launches on Android. In the meantime, iPhone is available now.
                     </div>
                 </div>
                 <p class="hero__trust">
@@ -1541,6 +1613,7 @@
                         <source src="assets/HERO/promo_hero_5s_540w_optimized.mp4" type="video/mp4">
                     </video>
                 </div>
+                <p class="hero__caption">Works in any store. Get your match in seconds.</p>
             </div>
         </div>
     </section>
@@ -1641,10 +1714,12 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            <path d="M9 12l2 2 4-4"></path>
-                        </svg>
+                        <div class="feature-card__icon-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                        </div>
                     </div>
                     <div class="feature-card__body">
                         <h3>Private by design</h3>
@@ -1664,51 +1739,49 @@
                 <p class="section-description">
                     Getting started is easy. Add your wardrobe, scan items while shopping, and buy only what truly fits your style.
                 </p>
+                <span class="section-time-marker">Takes less than 30 seconds</span>
             </div>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                            <circle cx="12" cy="13" r="4"></circle>
-                        </svg>
+                    <div class="step-screenshot-wrap">
+                        <img class="step-screenshot"
+                             src="assets/how_it_works/add_to_wardrobe.jpg"
+                             alt="Add your wardrobe items for better matches"
+                             loading="lazy" decoding="async" width="1206" height="2436">
                     </div>
                     <h3>Add Your Wardrobe</h3>
                     <p>Upload the clothes you already own to create your personal digital wardrobe.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="10" r="3"></circle>
-                            <path d="M12 2a8 8 0 0 0-8 8c0 1.892.402 3.13 1.5 4.5L12 22l6.5-7.5c1.098-1.37 1.5-2.608 1.5-4.5a8 8 0 0 0-8-8z"></path>
-                        </svg>
+                    <div class="step-screenshot-wrap">
+                        <img class="step-screenshot"
+                             src="assets/how_it_works/scan_an_item.webp"
+                             alt="Scan an item in-store"
+                             loading="lazy" decoding="async" width="591" height="1059">
                     </div>
                     <h3>Scan a New Item</h3>
                     <p>In-store or online, scan a piece you're thinking about buying.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
-                            <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
-                            <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
-                            <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
+                    <div class="step-screenshot-wrap">
+                        <img class="step-screenshot"
+                             src="assets/how_it_works/match_result.webp"
+                             alt="See your best matches instantly"
+                             loading="lazy" decoding="async" width="1206" height="2477">
                     </div>
                     <h3>Get Instant Match Results</h3>
                     <p>Scan & Match analyzes the item and shows what works with your wardrobe — including compatibility and outfit-ready options.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <div class="step-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
+                    <div class="step-screenshot-wrap">
+                        <img class="step-screenshot"
+                             src="assets/how_it_works/shop_with_confidence.webp"
+                             alt="Get AI suggestions to shop with confidence"
+                             loading="lazy" decoding="async" width="591" height="1060">
                     </div>
                     <h3>Shop With Confidence</h3>
                     <p>Buy only what fits your style and matches what you already have. Less waste, better outfits, smarter shopping.</p>
@@ -1814,7 +1887,7 @@
                             <button type="submit">Submit</button>
                         </form>
                         <div class="cta-waitlist-success" id="cta-android-waitlist-success">
-                            Thanks — you're on the list!
+                            You're on the list! We'll email you as soon as Scan &amp; Match launches on Android. In the meantime, iPhone is available now.
                         </div>
                     </div>
                     <p class="cta-status">
@@ -1870,6 +1943,25 @@
     <script>
         const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJ8DNhqaGIjBOOyRC7whL0a7G4TFszo6cGn7rXMbjIySxWiOwjU-pBiGOwFFBittaD/exec';
 
+        // ── UTM persistence: capture on first landing, survive in-page navigation ──
+        (function persistUtm() {
+            const params = new URLSearchParams(window.location.search);
+            const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+            const hasUtm = utmKeys.some(k => params.has(k));
+            if (hasUtm) {
+                utmKeys.forEach(k => {
+                    const v = params.get(k);
+                    if (v) sessionStorage.setItem(k, v);
+                });
+            }
+        })();
+
+        function getUtm(key) {
+            return new URLSearchParams(window.location.search).get(key)
+                || sessionStorage.getItem(key)
+                || '';
+        }
+
         // ── Navbar scroll effect ──
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -1906,20 +1998,67 @@
             });
         });
 
+        // ── App Store click tracking ──
+        document.querySelectorAll('a[href*="apps.apple.com"]').forEach(link => {
+            link.addEventListener('click', () => {
+                const formLocation = link.closest('.hero') ? 'hero' : 'footer_cta';
+                if (typeof gtag === 'function') {
+                    gtag('event', 'app_store_click', { form_location: formLocation });
+                }
+                if (typeof fbq === 'function') {
+                    fbq('trackCustom', 'AppStoreClick', { form_location: formLocation });
+                }
+            });
+        });
+
         // ── Android waitlist submission helper ──
-        async function submitWaitlistEmail(email, submitBtn, formEl, successEl) {
+        async function submitWaitlistEmail(email, submitBtn, formEl, successEl, formLocation) {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Joining...';
+
+            let success = false;
             try {
                 await fetch(APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email })
+                    body: JSON.stringify({
+                        email,
+                        form_location: formLocation,
+                        utm_source: getUtm('utm_source'),
+                        utm_medium: getUtm('utm_medium'),
+                        utm_campaign: getUtm('utm_campaign'),
+                        utm_content: getUtm('utm_content'),
+                        utm_term: getUtm('utm_term')
+                    })
                 });
+                success = true;
             } catch (e) {
                 // no-cors means we can't read the response; treat as success
+                success = true;
             }
+
+            if (success) {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'generate_lead', {
+                        form_location: formLocation,
+                        platform: 'android_waitlist'
+                    });
+                }
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead', {
+                        content_name: 'android_waitlist',
+                        content_category: formLocation
+                    });
+                }
+            } else {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'waitlist_submit_error', {
+                        form_location: formLocation
+                    });
+                }
+            }
+
             formEl.style.display = 'none';
             successEl.classList.add('show');
             localStorage.setItem('android-waitlist-signed-up', 'true');
@@ -1946,7 +2085,7 @@
             e.preventDefault();
             const email = document.getElementById('android-waitlist-email').value;
             const submitBtn = heroAndroidForm.querySelector('button[type="submit"]');
-            await submitWaitlistEmail(email, submitBtn, heroAndroidForm, heroSuccessEl);
+            await submitWaitlistEmail(email, submitBtn, heroAndroidForm, heroSuccessEl, 'hero');
         });
 
         // ── CTA section: Android waitlist toggle ──
@@ -1970,7 +2109,7 @@
             e.preventDefault();
             const email = document.getElementById('cta-android-waitlist-email').value;
             const submitBtn = ctaAndroidForm.querySelector('button[type="submit"]');
-            await submitWaitlistEmail(email, submitBtn, ctaAndroidForm, ctaSuccessEl);
+            await submitWaitlistEmail(email, submitBtn, ctaAndroidForm, ctaSuccessEl, 'footer_cta');
         });
 
         // ── On page load: restore waitlist success state ──
