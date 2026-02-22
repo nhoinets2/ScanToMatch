@@ -975,6 +975,12 @@
             background-size: contain;
         }
 
+        .proof__privacy {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-bottom: 14px;
+        }
+
         .proof__status {
             font-size: 14px;
             color: var(--text-secondary);
@@ -1106,11 +1112,11 @@
             margin-bottom: 16px;
         }
 
-        .cta-card > .cta-content > p {
+        .cta-card > .cta-content > p:not(.cta-status) {
             font-size: 18px;
             color: rgba(255, 255, 255, 0.8);
             max-width: 500px;
-            margin: 0 auto 24px;
+            margin: 0 auto 32px;
         }
 
         .cta-status {
@@ -1121,7 +1127,7 @@
             justify-content: center;
             gap: 8px;
             flex-wrap: wrap;
-            margin-bottom: 32px;
+            margin-top: 20px;
         }
 
         .cta-status .hero__sep {
@@ -1480,7 +1486,7 @@
                     Shop with confidence — scan clothes and see what <span>matches your wardrobe</span>
                 </h1>
                 <p class="hero__subtitle">
-                    Scan an item in-store and instantly get AI-powered outfit matches from clothes you already own. No more guesswork, no more "it looked good in the store."
+                    Scan an item in-store and instantly see what matches your wardrobe.
                 </p>
                 <p class="hero__status">
                     <span class="dot dot--live"></span>
@@ -1501,14 +1507,14 @@
                 <div class="hero__waitlist-form" id="hero-waitlist-form" hidden>
                     <form id="android-waitlist-form">
                         <input type="email" placeholder="Enter your email" required id="android-waitlist-email" aria-label="Email address for Android waitlist">
-                        <button type="submit">Join Waitlist</button>
+                        <button type="submit">Submit</button>
                     </form>
                     <div class="hero__waitlist-success" id="android-waitlist-success">
-                        Thanks — you're on the list! We'll email you as soon as Android is live.
+                        Thanks — you're on the list!
                     </div>
                 </div>
                 <p class="hero__trust">
-                    Privacy-first. We never sell your data, and your images are not used to train AI.
+                    Privacy-first. We never sell your data, and your images are never used to train AI.
                 </p>
             </div>
             <!-- Right: Video in phone card -->
@@ -1529,9 +1535,8 @@
             <span class="section-label">Why Scan & Match</span>
             <h2 class="why__title">Stop buying clothes that don't work with your wardrobe</h2>
             <div class="why__body">
-                <p>Buying something new is easy. Buying something that actually works with your wardrobe is the hard part.</p>
-                <p>Too often, clothes look great in the store — but once you get home, they don't match what you already own.</p>
-                <p><strong>Scan & Match helps you decide before you buy.</strong> Just scan the item, compare it with your wardrobe, and shop smarter with confidence.</p>
+                <p>Scan items before you buy and instantly see what matches your wardrobe.</p>
+                <p>Less guesswork, fewer misses, and more outfits you'll actually wear.</p>
             </div>
         </div>
     </section>
@@ -1557,10 +1562,11 @@
                 </p>
                 <ul class="proof__bullets">
                     <li>Scan an item in seconds</li>
-                    <li>Get instant match results with your wardrobe</li>
+                    <li>Get instant matches from your wardrobe</li>
                     <li>See personalized suggestions based on your wardrobe</li>
                     <li>Buy with more confidence and less guesswork</li>
                 </ul>
+                <p class="proof__privacy">Privacy-first. No data sold. Images are never used to train AI.</p>
                 <p class="proof__status">
                     <span class="dot dot--live"></span>
                     Available now on iPhone
@@ -1592,8 +1598,8 @@
                             <rect x="7" y="7" width="10" height="10" rx="1"></rect>
                         </svg>
                     </div>
-                    <h3>Instant Scan</h3>
-                    <p>Scan clothing items in seconds — at home, from your gallery, or while shopping — and get instant analysis without slowing down your flow.</p>
+                    <h3>Scan in seconds</h3>
+                    <p>Point your phone at an item and get matches instantly.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon wardrobe">
@@ -1603,8 +1609,8 @@
                             <path d="M2 10.6L12 2l10 8.6"></path>
                         </svg>
                     </div>
-                    <h3>Your Digital Wardrobe</h3>
-                    <p>Build a wardrobe you can actually use. Keep your pieces organized and ready for matching anytime you shop.</p>
+                    <h3>Use what you already own</h3>
+                    <p>See what works with your real wardrobe before you buy.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon ai">
@@ -1613,8 +1619,8 @@
                             <path d="M20.88 10A10 10 0 0 0 12 2v10h10"></path>
                         </svg>
                     </div>
-                    <h3>AI-Powered Matching</h3>
-                    <p>Our AI analyzes color, style, and overall compatibility to find pieces from your wardrobe that work together.</p>
+                    <h3>Personalized suggestions</h3>
+                    <p>Get AI-guided tips for strong matches and near matches.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon results">
@@ -1623,8 +1629,8 @@
                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                         </svg>
                     </div>
-                    <h3>Match Results You Can Trust</h3>
-                    <p>See your best matches clearly, so you can make decisions faster and buy with confidence.</p>
+                    <h3>Clear match results</h3>
+                    <p>See your best matches at a glance and decide faster.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon style">
@@ -1636,8 +1642,8 @@
                             <path d="M6.5 15a4.5 4.5 0 0 0 4.5 4"></path>
                         </svg>
                     </div>
-                    <h3>Personalized Style Preferences</h3>
-                    <p>Set your style preferences and get results that feel like you — not generic outfit suggestions.</p>
+                    <h3>Your style, your results</h3>
+                    <p>Set your preferences and get suggestions that actually fit your look.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon secure">
@@ -1646,8 +1652,8 @@
                             <path d="M9 12l2 2 4-4"></path>
                         </svg>
                     </div>
-                    <h3>Secure & Private</h3>
-                    <p>Your wardrobe is personal. We protect your data, never sell it, and never use your photos to train AI.</p>
+                    <h3>Private by design</h3>
+                    <p>Your data is never sold, and your images aren't used to train AI.</p>
                 </div>
             </div>
         </div>
@@ -1796,14 +1802,8 @@
         <div class="container">
             <div class="cta-card">
                 <div class="cta-content">
-                    <h2>Ready to shop smarter?</h2>
-                    <p>Download Scan & Match on iPhone and stop buying clothes that don't work with your wardrobe.</p>
-                    <p class="cta-status">
-                        <span class="dot dot--live-white"></span>
-                        Available now on iPhone
-                        <span class="hero__sep">•</span>
-                        Android coming soon
-                    </p>
+                    <h2>Ready to shop with more confidence?</h2>
+                    <p>Download Scan & Match on iPhone, or join the Android waitlist for launch updates.</p>
                     <div class="cta-buttons">
                         <a href="https://apps.apple.com/ua/app/scan-match/id6757746270" class="cta-btn" target="_blank" rel="noopener noreferrer">
                             Download on the App Store
@@ -1815,13 +1815,18 @@
                     <div class="cta-waitlist-form" id="cta-waitlist-form" hidden>
                         <form id="cta-android-waitlist-form">
                             <input type="email" placeholder="Enter your email" required id="cta-android-waitlist-email" aria-label="Email address for Android waitlist">
-                            <button type="submit">Join Waitlist</button>
+                            <button type="submit">Submit</button>
                         </form>
                         <div class="cta-waitlist-success" id="cta-android-waitlist-success">
-                            Thanks — you're on the list! We'll email you as soon as Android is live.
+                            Thanks — you're on the list!
                         </div>
-                        <p class="cta-waitlist-note">Join the Android waitlist to get launch updates and early access news.</p>
                     </div>
+                    <p class="cta-status">
+                        <span class="dot dot--live-white"></span>
+                        Available now on iPhone
+                        <span class="hero__sep">•</span>
+                        Android coming soon
+                    </p>
                 </div>
             </div>
         </div>
