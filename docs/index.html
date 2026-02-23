@@ -509,7 +509,7 @@
                 display: none;
             }
             .phone-card {
-                background-image: url('assets/HERO/scantomatch_hero_poster.png');
+                background-image: url('assets/HERO/scantomatch_hero_poster.webp');
                 background-size: cover;
                 background-position: center;
                 aspect-ratio: 9 / 16;
@@ -701,24 +701,6 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-        }
-
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 24px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-hairline);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-        }
-
-        .step-icon svg {
-            width: 36px;
-            height: 36px;
-            color: var(--accent-terracotta);
         }
 
         .step-screenshot-wrap {
@@ -1036,7 +1018,7 @@
                 display: none;
             }
             .proof-card {
-                background-image: url('assets/product_proof/scantomatch_full_demo_poster.png');
+                background-image: url('assets/product_proof/scantomatch_full_demo_poster.webp');
                 background-size: cover;
                 background-position: center;
                 aspect-ratio: 9 / 16;
@@ -1582,7 +1564,7 @@
         <div class="container nav-content">
             <a href="#" class="logo">
                 <div class="logo-icon">
-                    <img src="icon.webp" alt="Scan & Match logo">
+                    <img src="icon.webp" alt="Scan & Match logo" width="128" height="128" decoding="async">
                 </div>
                 <span class="logo-text">Scan & Match</span>
             </a>
@@ -1646,7 +1628,7 @@
             <!-- Right: Video in phone card -->
             <div class="hero__media">
                 <div class="phone-card">
-                    <video class="phone-card__video" autoplay muted loop playsinline preload="metadata" poster="assets/HERO/scantomatch_hero_poster.png">
+                    <video class="phone-card__video" autoplay muted loop playsinline preload="metadata" poster="assets/HERO/scantomatch_hero_poster.webp">
                         <source src="assets/HERO/promo_hero_5s_420w.webm" type="video/webm">
                         <source src="assets/HERO/promo_hero_5s_540w_optimized.mp4" type="video/mp4">
                     </video>
@@ -1674,7 +1656,7 @@
             <!-- Left: Video (user-initiated, not autoplay) -->
             <div class="proof__media">
                 <div class="proof-card">
-                    <video class="proof-card__video" muted playsinline controls preload="metadata" poster="assets/product_proof/scantomatch_full_demo_poster.png">
+                    <video class="proof-card__video" muted playsinline controls preload="none" poster="assets/product_proof/scantomatch_full_demo_poster.webp">
                         <source src="assets/product_proof/promo_product_proof_420w.webm" type="video/webm">
                         <source src="assets/product_proof/scantomatch_full_demo_14s_540w.mp4" type="video/mp4">
                     </video>
@@ -1717,7 +1699,7 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-card__media feature-card__media--photo">
-                        <img src="assets/features/feature_scan.webp" alt="Scan an item in the Scan & Match app" loading="lazy" decoding="async">
+                        <img src="assets/features/feature_scan.webp" alt="Scan an item in the Scan & Match app" loading="lazy" decoding="async" width="591" height="1059">
                     </div>
                     <div class="feature-card__body">
                         <h3>Scan in seconds</h3>
@@ -1727,7 +1709,7 @@
                 <div class="feature-card">
                     <div class="feature-card__media feature-card__media--ui">
                         <div class="ui-shot">
-                            <img src="assets/features/feature_wardrobe.webp" alt="Your digital wardrobe in Scan & Match" loading="lazy" decoding="async">
+                            <img src="assets/features/feature_wardrobe.webp" alt="Your digital wardrobe in Scan & Match" loading="lazy" decoding="async" width="1206" height="2484">
                         </div>
                     </div>
                     <div class="feature-card__body">
@@ -1738,7 +1720,7 @@
                 <div class="feature-card">
                     <div class="feature-card__media feature-card__media--ui">
                         <div class="ui-shot">
-                            <img src="assets/features/feature_suggestions.webp" alt="Personalized outfit suggestions in Scan & Match" loading="lazy" decoding="async">
+                            <img src="assets/features/feature_suggestions.webp" alt="Personalized outfit suggestions in Scan & Match" loading="lazy" decoding="async" width="1206" height="2464">
                         </div>
                     </div>
                     <div class="feature-card__body">
@@ -1749,7 +1731,7 @@
                 <div class="feature-card">
                     <div class="feature-card__media feature-card__media--ui">
                         <div class="ui-shot">
-                            <img src="assets/features/feature_results.webp" alt="Match results screen in Scan & Match" loading="lazy" decoding="async">
+                            <img src="assets/features/feature_results.webp" alt="Match results screen in Scan & Match" loading="lazy" decoding="async" width="1206" height="2459">
                         </div>
                     </div>
                     <div class="feature-card__body">
@@ -1760,7 +1742,7 @@
                 <div class="feature-card">
                     <div class="feature-card__media feature-card__media--ui">
                         <div class="ui-shot">
-                            <img src="assets/features/feature_style.webp" alt="Style preferences in Scan & Match" loading="lazy" decoding="async">
+                            <img src="assets/features/feature_style.webp" alt="Style preferences in Scan & Match" loading="lazy" decoding="async" width="1206" height="2473">
                         </div>
                     </div>
                     <div class="feature-card__body">
@@ -1802,9 +1784,9 @@
                     <div class="step-number">1</div>
                     <div class="step-screenshot-wrap">
                         <img class="step-screenshot"
-                             src="assets/how_it_works/add_to_wardrobe.jpg"
+                             src="assets/how_it_works/add_to_wardrobe.webp"
                              alt="Add your wardrobe items for better matches"
-                             loading="lazy" decoding="async" width="1206" height="2436">
+                             loading="lazy" decoding="async" width="1206" height="2490">
                     </div>
                     <h3>Add Your Wardrobe</h3>
                     <p>Upload the clothes you already own to create your personal digital wardrobe.</p>
@@ -1964,7 +1946,7 @@
                 <div class="footer-brand">
                     <div class="footer-logo">
                         <div class="footer-logo-icon">
-                            <img src="icon.webp" alt="Scan & Match logo">
+                            <img src="icon.webp" alt="Scan & Match logo" width="128" height="128" loading="lazy" decoding="async">
                         </div>
                         <span class="footer-logo-text">Scan & Match</span>
                     </div>
