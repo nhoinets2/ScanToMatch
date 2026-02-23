@@ -556,6 +556,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
+            align-items: start;
         }
 
         .feature-card {
@@ -563,8 +564,6 @@
             border: 1px solid var(--border-hairline);
             border-radius: 24px;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -584,8 +583,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex: 1;
-            min-height: 200px;
+            height: 280px;
             background: linear-gradient(135deg, var(--accent-brass-light), rgba(198, 162, 107, 0.06));
             border-bottom: 1px solid rgba(198, 162, 107, 0.2);
         }
