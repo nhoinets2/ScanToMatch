@@ -323,6 +323,56 @@
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        /* ── Apple badge ── */
+        .apple-badge-link {
+            display: inline-block;
+            line-height: 0;
+            align-self: flex-start;
+            border-radius: 10px;
+            transition: opacity 0.15s;
+        }
+        .apple-badge-link:hover { opacity: 0.82; }
+        .apple-badge-link svg {
+            display: block;
+            width: 174px;
+            height: 58px;
+        }
+        .apple-badge-link--lg svg {
+            width: 180px;
+            height: 60px;
+        }
+
+        /* ── QR block ── */
+        .qr-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            margin-top: 20px;
+        }
+        .qr-block img {
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(25, 20, 13, 0.10);
+            display: block;
+        }
+        .qr-block__caption {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            line-height: 1.4;
+        }
+        .cta-content .qr-block {
+            align-items: center;
+            margin-top: 28px;
+        }
+        .qr-block--light .qr-block__caption {
+            color: rgba(255, 255, 255, 0.65);
+        }
+        @media (max-width: 899px) {
+            .qr-block { display: none; }
         }
 
         /* Shared button system */
@@ -1426,6 +1476,7 @@
             .hero__status { order: 5; margin-top: 4px; }
             .hero__actions { order: 6; margin-top: 12px; flex-direction: column; align-items: stretch; }
             .hero__actions .btn { width: 100%; align-items: flex-start; }
+            .hero__actions .apple-badge-link { align-self: center; }
             .hero__waitlist-form { order: 7; }
             .hero__waitlist-form form { flex-direction: column; }
             .hero__waitlist-form input[type="email"],
@@ -1603,14 +1654,24 @@
                     Android coming soon
                 </p>
                 <div class="hero__actions">
-                    <a class="btn btn--primary" href="https://apps.apple.com/ua/app/scan-match/id6757746270" target="_blank" rel="noopener noreferrer">
-                        <span class="btn__label">Download on the App Store</span>
-                        <span class="btn__sub">iPhone · Available now</span>
+                    <a class="apple-badge-link" href="https://apps.apple.com/ua/app/scan-match/id6757746270" target="_blank" rel="noopener noreferrer" data-track="hero_badge" aria-label="Download Scan &amp; Match on the App Store">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" aria-hidden="true" focusable="false">
+                            <rect width="120" height="40" rx="7.5" fill="#000"/>
+                            <path fill="#fff" d="M24.769 20.3c-.029-3.236 2.645-4.817 2.764-4.891-1.512-2.207-3.861-2.508-4.684-2.534-1.97-.201-3.889 1.178-4.894 1.178-1.024 0-2.567-1.157-4.233-1.124-2.145.033-4.146 1.271-5.248 3.196-2.265 3.921-.577 9.69 1.597 12.856 1.088 1.551 2.359 3.282 4.027 3.222 1.631-.067 2.24-1.038 4.207-1.038 1.949 0 2.52 1.038 4.221.998 1.748-.029 2.849-1.556 3.904-3.118 1.263-1.776 1.773-3.526 1.795-3.615-.04-.013-3.42-1.303-3.456-5.13zM21.635 11.358c.875-1.084 1.474-2.565 1.308-4.069-1.265.053-2.847.861-3.759 1.923-.814.939-1.535 2.473-1.347 3.923 1.42.107 2.878-.716 3.798-1.777z"/>
+                            <text fill="#fff" font-family="-apple-system,'Helvetica Neue',Helvetica,sans-serif" font-size="7" letter-spacing="0.4" x="32" y="17">DOWNLOAD ON THE</text>
+                            <text fill="#fff" font-family="-apple-system,'Helvetica Neue',Helvetica,sans-serif" font-size="14.5" font-weight="700" letter-spacing="-0.2" x="31" y="30">App Store</text>
+                        </svg>
                     </a>
                     <button class="btn btn--secondary" id="android-waitlist-toggle" type="button">
                         <span class="btn__label">Join Android Waitlist</span>
                         <span class="btn__sub">Get launch updates</span>
                     </button>
+                </div>
+                <div class="qr-block">
+                    <a href="https://apps.apple.com/ua/app/scan-match/id6757746270" target="_blank" rel="noopener noreferrer" data-track="hero_qr">
+                        <img src="assets/qr-appstore.webp" alt="Scan to download Scan &amp; Match on iPhone" width="120" height="120" loading="lazy" decoding="async">
+                    </a>
+                    <span class="qr-block__caption">Scan with your phone to download</span>
                 </div>
                 <div class="hero__waitlist-form" id="hero-waitlist-form" hidden>
                     <form id="android-waitlist-form">
@@ -1912,12 +1973,23 @@
                     <h2>Ready to shop with more confidence?</h2>
                     <p>Download Scan & Match on iPhone, or join the Android waitlist for launch updates.</p>
                     <div class="cta-buttons">
-                        <a href="https://apps.apple.com/ua/app/scan-match/id6757746270" class="cta-btn" target="_blank" rel="noopener noreferrer">
-                            Download on the App Store
+                        <a class="apple-badge-link apple-badge-link--lg" href="https://apps.apple.com/ua/app/scan-match/id6757746270" target="_blank" rel="noopener noreferrer" data-track="download_badge" aria-label="Download Scan &amp; Match on the App Store">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" aria-hidden="true" focusable="false">
+                                <rect width="120" height="40" rx="7.5" fill="#000"/>
+                                <path fill="#fff" d="M24.769 20.3c-.029-3.236 2.645-4.817 2.764-4.891-1.512-2.207-3.861-2.508-4.684-2.534-1.97-.201-3.889 1.178-4.894 1.178-1.024 0-2.567-1.157-4.233-1.124-2.145.033-4.146 1.271-5.248 3.196-2.265 3.921-.577 9.69 1.597 12.856 1.088 1.551 2.359 3.282 4.027 3.222 1.631-.067 2.24-1.038 4.207-1.038 1.949 0 2.52 1.038 4.221.998 1.748-.029 2.849-1.556 3.904-3.118 1.263-1.776 1.773-3.526 1.795-3.615-.04-.013-3.42-1.303-3.456-5.13zM21.635 11.358c.875-1.084 1.474-2.565 1.308-4.069-1.265.053-2.847.861-3.759 1.923-.814.939-1.535 2.473-1.347 3.923 1.42.107 2.878-.716 3.798-1.777z"/>
+                                <text fill="#fff" font-family="-apple-system,'Helvetica Neue',Helvetica,sans-serif" font-size="7" letter-spacing="0.4" x="32" y="17">DOWNLOAD ON THE</text>
+                                <text fill="#fff" font-family="-apple-system,'Helvetica Neue',Helvetica,sans-serif" font-size="14.5" font-weight="700" letter-spacing="-0.2" x="31" y="30">App Store</text>
+                            </svg>
                         </a>
                         <button class="cta-btn-ghost" id="cta-waitlist-toggle" type="button">
                             Join Android Waitlist
                         </button>
+                    </div>
+                    <div class="qr-block qr-block--light">
+                        <a href="https://apps.apple.com/ua/app/scan-match/id6757746270" target="_blank" rel="noopener noreferrer" data-track="download_qr">
+                            <img src="assets/qr-appstore.webp" alt="Scan to download Scan &amp; Match on iPhone" width="160" height="160" loading="lazy" decoding="async">
+                        </a>
+                        <span class="qr-block__caption">Scan with your phone to download</span>
                     </div>
                     <div class="cta-waitlist-form" id="cta-waitlist-form" hidden>
                         <form id="cta-android-waitlist-form">
@@ -2036,15 +2108,15 @@
             });
         });
 
-        // ── App Store click tracking ──
-        document.querySelectorAll('a[href*="apps.apple.com"]').forEach(link => {
-            link.addEventListener('click', () => {
-                const formLocation = link.closest('.hero') ? 'hero' : 'footer_cta';
+        // ── App Store click tracking (4-way: hero_badge / hero_qr / download_badge / download_qr) ──
+        document.querySelectorAll('[data-track]').forEach(el => {
+            el.addEventListener('click', () => {
+                const clickSource = el.dataset.track;
                 if (typeof gtag === 'function') {
-                    gtag('event', 'app_store_click', { form_location: formLocation });
+                    gtag('event', 'app_store_click', { click_source: clickSource });
                 }
                 if (typeof fbq === 'function') {
-                    fbq('trackCustom', 'AppStoreClick', { form_location: formLocation });
+                    fbq('trackCustom', 'AppStoreClick', { click_source: clickSource });
                 }
             });
         });
